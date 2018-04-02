@@ -1,0 +1,10 @@
+{
+    "boards": {
+        "crypto": "/crypto",
+        "gaming": "/gaming",
+        "general": "/general",
+        "music": "/music",
+        "programming": "/programming",
+        "tech": "/tech"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "name": "gext-client",
+    "version": "0.0.1",
+    "description": "gext textboard client",
+    "author": "Owen Oclee (https://github.com/owenoclee)",
+    "scripts": {
+        "build": "npm run protos && npm run js && npm run css",
+        "build-dev": "npm run protos && npm run js-dev && npm run css-dev",
+        "css": "crass src/css/main.css --optimize --O1 > public/main.css",
+        "css-dev": "cp src/css/main.css public/main.css",
+        "js": "browserify -t babelify --presets env -t vueify src/js/main.js | uglifyjs -c -m > public/main.js",
+        "js-dev": "browserify -t babelify --presets env -t vueify src/js/main.js > public/main.js",
+        "protos": "protoc --js_out=import_style=commonjs,binary:src/js/network --proto_path=src/js/network/protos src/js/network/protos/*.proto"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "es6-promise": "^4.2.4",
+        "google-protobuf": "^3.5.0",
+        "moment": "^2.21.0",
+        "vue": "^2.5.13",
+        "vue-router": "^3.0.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babelify": "^8.0.0",
+        "browserify": "^16.1.1",
+        "crass": "^0.12.3",
+        "eslint": "^4.19.1",
+        "eslint-plugin-vue": "^4.4.0",
+        "uglify-js": "^3.3.14",
+        "vueify": "^9.4.1"
+    }
+}

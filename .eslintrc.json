@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/recommended"
+    ],
+    "rules": {
+        "eol-last": "error",
+        "curly": ["error", "multi"],
+        "func-call-spacing": "error",
+        "quotes": ["error", "single"],
+        "no-trailing-spaces": "error",
+        "block-spacing": ["error", "always"],
+        "arrow-parens": ["error", "as-needed"],
+        "arrow-body-style": ["error", "as-needed"],
+        "comma-dangle": ["error", "always-multiline"],
+        "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+
+        "no-var": "error",
+        "eqeqeq": "error",
+        "prefer-const": "error",
+        "no-else-return": "error",
+
+        "vue/html-indent": [4, "warn"],
+        "vue/max-attributes-per-line": 0,
+        "vue/require-prop-types": "never"
+    }
+}
