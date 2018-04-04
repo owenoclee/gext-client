@@ -6,7 +6,7 @@
     "scripts": {
         "build": "npm run protos && npm run js && npm run css",
         "build-dev": "npm run protos && npm run js-dev && npm run css-dev",
-        "css": "crass src/css/main.css --optimize --O1 > public/main.css",
+        "css": "crass src/css/main.css --optimize > public/main.css",
         "css-dev": "cp src/css/main.css public/main.css",
         "js": "browserify -t babelify --presets env -t vueify src/js/main.js | uglifyjs -c -m > public/main.js",
         "js-dev": "browserify -t babelify --presets env -t vueify src/js/main.js > public/main.js",
