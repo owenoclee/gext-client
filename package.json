@@ -10,7 +10,7 @@
         "css-dev": "cp src/css/main.css public/main.css",
         "js": "browserify -t babelify --presets env -t vueify src/js/main.js | uglifyjs -c -m > public/main.js",
         "js-dev": "browserify -t babelify --presets env -t vueify src/js/main.js > public/main.js",
-        "protos": "protoc --js_out=import_style=commonjs,binary:src/js/network --proto_path=src/js/network/protos src/js/network/protos/*.proto"
+        "protos": "protoc --js_out=import_style=commonjs,binary:src/js/models --proto_path=src/js/models/protos src/js/models/protos/*.proto"
     },
     "dependencies": {
         "axios": "^0.18.0",

@@ -17,8 +17,8 @@
 
 <script>
     import axios from 'axios';
-    import { ThreadResponse } from '../network/thread_response_pb';
-    import { PostRequest } from '../network/post_request_pb';
+    import { Thread } from '../models/thread_pb';
+    import { Post } from '../models/post_pb';
     import { uri } from '../cfg/server.json';
 
     export default {
@@ -52,7 +52,7 @@
                 axios.get(uri + '/threads/' + threadID, {
                     responseType: 'arraybuffer',
                 }).then(response => {
-                    const posts = ThreadResponse.deserializeBinary(response.data).getPostsList();
+                    const posts = Thread.deserializeBinary(response.data).getPostsList();
                     this.posts = this.normalizePosts(posts);
                 });
             },
@@ -62,7 +62,7 @@
             },
             submit() {
                 if (this.message !== '') {
-                    const post = new PostRequest();
+                    const post = new Post();
                     post.setReplyTo(this.originalPost.getId());
                     post.setBody(this.message);
 

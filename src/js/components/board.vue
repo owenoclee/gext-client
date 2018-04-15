@@ -16,7 +16,7 @@
 
 <script>
     import axios from 'axios';
-    import { PageResponse } from '../network/page_response_pb';
+    import { Page } from '../models/page_pb';
     import { uri } from '../cfg/server.json';
 
     export default {
@@ -48,7 +48,7 @@
                 this.pageRes = null;
                 axios.get(uri + '/boards/' + this.board + '/page/' + this.page, {
                     responseType: 'arraybuffer',
-                }).then(response => this.pageRes = PageResponse.deserializeBinary(response.data));
+                }).then(response => this.pageRes = Page.deserializeBinary(response.data));
             },
         },
     };

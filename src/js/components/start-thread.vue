@@ -12,7 +12,7 @@
 
 <script>
     import axios from 'axios';
-    import { PostRequest } from '../network/post_request_pb';
+    import { Post } from '../models/post_pb';
     import { uri } from '../cfg/server.json';
 
     export default {
@@ -36,7 +36,7 @@
                     this.submit();
             },
             submit() {
-                const post = new PostRequest();
+                const post = new Post();
                 post.setBoard(this.board);
                 post.setSubject(this.subject);
                 post.setBody(this.message);
